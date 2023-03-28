@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eo pipefail
 ARTIFACT_BUCKET=$(cat bucket-name.txt)
-aws s3 cp data/rawdata.csv s3://$ARTIFACT_BUCKET/inbound/rawdata.csv
+aws s3 cp testdata/rawdata.csv s3://$ARTIFACT_BUCKET/inbound/rawdata.csv
 TEMPLATE=template.yml
 if [ $1 ]
 then

@@ -8,7 +8,7 @@ Resources:
   function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: build/distributions/deid-java.zip
+      CodeUri: build/distributions/deidentification.zip
       Handler: example.Handler
       Runtime: java8
       Description: Java function
