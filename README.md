@@ -7,7 +7,7 @@ The project source includes function code and supporting resources:
 - `src/main` - The Java Lambda function that implements the deidentification logic.
 - `src/test` - A unit test and helper classes (not currently in use - see below).
 - `testdata` - Sample rawdata.csv file containing fake user info (including SSNs)
-- `template.yml` - An CFT that that creates an application.
+- `template.yml` - The CFT that creates the de-id application.
 - `build.gradle` - A Gradle build file.
 - `1-create-bucket.sh`, `2-deploy.sh`, etc. - Shell scripts that use the AWS CLI to deploy and manage the DE-ID application.
 
@@ -16,7 +16,7 @@ Use the following instructions to deploy the deidentification POC app.
 # Requirements
 - [Java 8 runtime environment (SE JRE)](https://www.oracle.com/java/technologies/javase-downloads.html)
 - [Gradle 5](https://gradle.org/releases/) 
-- The Bash shell. For Linux and macOS, this is included by default. In Windows 10, you can install the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows-integrated version of Ubuntu and Bash.
+- The Bash shell
 - [The AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) v1.17 or newer.
 
 
@@ -31,7 +31,7 @@ To create a new bucket for DE-ID deployment artifacts, run `1-create-bucket.sh`.
     $ ./1-create-bucket.sh
     make_bucket: lambda-artifacts-a5e491dbb5b22e0d
 
-To build a Lambda layer that contains the function's runtime dependencies, run `2-build-layer.sh`. Packaging dependencies in a layer reduces the size of the deployment package that you upload when you modify your code.
+To build a Lambda layer that contains the function's runtime dependencies, run `2-build-layer.sh`.
 
     $ ./2-build-layer.sh
 
