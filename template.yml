@@ -5,6 +5,19 @@ Resources:
   bucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
+  ssnTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ssnMap
+      AttributeDefinitions:
+        -
+          AttributeName: "ssn"
+          AttributeType: "S"
+      KeySchema:
+        -
+          AttributeName: "ssn"
+          KeyType: "HASH"
+      BillingMode: PAY_PER_REQUEST
   function:
     Type: AWS::Serverless::Function
     Properties:

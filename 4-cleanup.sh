@@ -44,5 +44,8 @@ while true; do
     esac
 done
 
+echo "Deleting the dynamoDB table"
+aws dynamodb delete-table --table-name ssnMap
+
 rm -f out.yml out.json event.json
 rm -rf build .gradle target
